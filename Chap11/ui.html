@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+    Streamlining Your Research Laboratory with Python
+    Authors:   Mark F. Russo, Ph.D and William Neil 
+    Publisher: John Wiley & Sons, Inc.
+    License:   MIT (https://opensource.org/licenses/MIT)
+  -->
+  <title>UI</title>
+  <!-- ui.html -->
+  <style>
+    #txt_log { width:100%; height:200px; font-family:monospace; }
+  </style>
+</head>
+
+<body>
+  <input    id="txt_msg" type="text">
+  <button   id="btn_send">Send</button>
+  <button   id="btn_clear">Clear</button>
+  <textarea id="txt_log"></textarea>
+
+  <script defer>
+    // Open a WebSocket at /ws on port 8080
+    const ws = new WebSocket(`ws://${document.location.host}/ws`);
+
+    // Accumulate log message
+    function log(msg) {
+      document.getElementById('txt_log').value += `${msg}\n`;
+    }
+    // Clear log
+    function clear_log() {
+      document.getElementById('txt_log').value = "";
+    }
+    // Log onopen and onmessage events.
+    ws.onopen    = (ev) => log('Connected to server');
+    ws.onmessage = (ev) => log(`Received: ${ev.data}`);
+
+    // Send message to open WebSocket
+    document.getElementById('btn_send').onclick = (ev) => {
+      const txt_msg = document.getElementById('txt_msg');
+      ws.send(txt_msg.value);
+      log(`Sent: ${txt_msg.value}`);
+      txt_msg.value = '';
+    };
+    // Clear log
+    document.getElementById('btn_clear').onclick = (ev) => clear_log();
+
+  </script>
+</body>
+</html>

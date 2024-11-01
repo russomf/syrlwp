@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<experiment>
+    <plate barcode="10001" type="96shallow">
+        <well row="1" column="1">
+            <compound id="AAA10001" />
+            <compound id="AAA10002" />
+            <measurement test="T2001">45.3</measurement>
+        </well>
+        <well row="2" column="1">
+            <compound id="AAA10002" />
+            <compound id="AAA10003" />
+            <measurement test="T2002">52.6</measurement>
+        </well>
+        <well row="3" column="1">
+            <compound id="AAA10003" />
+            <compound id="AAA10004" />
+            <measurement test="T2001">35.1</measurement>
+        </well>
+        <well row="4" column="1">
+            <compound id="AAA10004" />
+            <compound id="AAA10005" />
+            <measurement test="T2002">45.9</measurement>
+        </well>
+        <well row="5" column="1">
+            <compound id="AAA10005" />
+            <compound id="AAA10006" />
+            <measurement test="T2001">39.0</measurement>
+        </well>
+        <well row="6" column="1">
+            <compound id="AAA10006" />
+            <compound id="AAA10007" />
+            <measurement test="T2002">48.2</measurement>
+        </well>
+        <well row="7" column="1">
+            <compound id="AAA10007" />
+            <compound id="AAA10008" />
+            <measurement test="T2001">41.9</measurement>
+        </well>
+        <well row="8" column="1">
+            <compound id="AAA10008" />
+            <compound id="AAA10001" />
+            <measurement test="T2002">51.2</measurement>
+        </well>
+    </plate>
+</experiment>

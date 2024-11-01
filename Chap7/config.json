@@ -1,0 +1,7 @@
+{
+    "program": "analyze.py",
+    "version": 1.4,
+    "directory": "/Documents/Instrument/Data",
+    "frequency": 3600,
+    "parameters": [60, true]
+}
